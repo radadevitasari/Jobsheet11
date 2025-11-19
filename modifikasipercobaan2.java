@@ -21,20 +21,35 @@ public class modifikasipercobaan2 {
                 case 1:
                     System.out.print("Masukkan nama: ");
                     String nama = sc.nextLine();
-                    System.out.print("Masukkan baris (1-4): ");
-                    int baris = sc.nextInt();
-                    System.out.print("Masukkan kolom (1-2): ");
-                    int kolom = sc.nextInt();
-                    sc.nextLine();
+
+                    int baris, kolom;
+                
+                    while (true) {
+                        System.out.print("Masukkan baris (1-4): ");
+                        baris = sc.nextInt();
+                        
+                        System.out.print("Masukkan kolom (1-2): ");
+                        kolom = sc.nextInt();
+                        sc.nextLine();
                     
-                if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
-                     System.out.println("Kursi tidak tersedia!");
-                     System.out.println("Silakan masukkan baris 1–4 dan kolom 1–2.");
-                } 
-                else {
-                    penonton[baris - 1][kolom - 1] = nama;
-                    System.out.println("Data penonton berhasil disimpan!");
-}
+                    if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
+                        System.out.println("Kursi tidak tersedia! Ulangi input.\n");
+                        continue; 
+                    }
+
+                    if (penonton[baris - 1][kolom - 1] != null) {
+                            System.out.println("Kursi sudah terisi oleh: " 
+                                + penonton[baris - 1][kolom - 1]);
+                            System.out.println("Silakan pilih kursi lain!\n");
+                            continue; 
+                        }
+                        penonton[baris - 1][kolom - 1] = nama;
+                        System.out.println("Data penonton berhasil disimpan!");
+                        break; 
+                    }
+                    break;
+
+
                 case 2:
                     System.out.println("\n=== DAFTAR PENONTON ===");
                     for (int i = 0; i < 4; i++) {
