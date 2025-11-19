@@ -54,11 +54,16 @@ public class modifikasipercobaan2 {
                     System.out.println("\n=== DAFTAR PENONTON ===");
                     for (int i = 0; i < 4; i++) {
                         for (int j = 0; j < 2; j++) {
-                            System.out.print(penonton[i][j] + "\t");
+                            if (penonton[i][j] == null) {
+                            System.out.print("***\t");
+                            } else {
+                                System.out.print(penonton[i][j] + "\t");
+                            }
                         }
                         System.out.println();
                     }
-                    break;
+                        break;
+
 
                 case 3:
                     System.out.println("Program selesai.");
