@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Numbers19 {
 
     public static void main(String[] args) {
@@ -10,6 +12,11 @@ public class Numbers19 {
         System.out.println("Panjang baris 0 : " + myNumbers[0].length);
         System.out.println("Panjang baris 1 : " + myNumbers[1].length);
         System.out.println("Panjang baris 2 : " + myNumbers[2].length);
+
+    for (int i = 0; i < myNumbers.length; i++) {
+       System.out.println(Arrays.toString(myNumbers[i]));
+    }
+
     }
 }
     
